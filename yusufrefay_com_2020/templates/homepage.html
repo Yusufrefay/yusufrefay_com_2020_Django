@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+		<!-- Preloader -->
+		<div id="preloader">
+			<div class="loading">
+				<div class="circle"></div>
+				<div class="text-loading">
+					<span data-text-preloader="R" class="letters">Y</span>
+					<span data-text-preloader="E" class="letters">U</span>
+					<span data-text-preloader="F" class="letters">S</span>
+					<span data-text-preloader="A" class="letters">U</span>
+					<span data-text-preloader="Y" class="letters">F</span>
+				</div>
+			</div>	
+		</div>
+		
+		<!-- Home Section -->
+		<section class="home" style="background-image: url('{% static 'img/home-bg.jpg' %}')">
+			
+			<!-- Banner -->
+			<div class="banner">
+  				<h1>Yusuf Refay</h1>
+				
+				<p class="cd-headline zoom">
+					<span>I am a</span>
+					<span class="cd-words-wrapper">
+						<b class="is-visible">Web Developer</b>
+						<b>Freelancer</b>
+						<b>Blogger</b>
+						<b>Reader</b>
+					</span>
+				</p>
+			</div>
+			
+			<!-- Menu -->
+			<div class="menu">
+				<div class="but-menu">
+    				<div class="line line-top"></div>
+    				<div class="line line-middle"></div>
+    				<div class="line line-bottom"></div>
+  				</div>
+				<div class="but-about menu-item">
+					<i class="fas fa-user-tie about-show" data-tooltip="about me" data-position="top"></i>
+  				</div>
+				<div class="but-resume menu-item">
+    				<i class="fas fa-address-book resume-show" data-tooltip="resume" data-position="right"></i>
+  				</div>
+  				<div class="but-portfolio menu-item">
+    				<i class="fas fa-briefcase portfolio-show" data-tooltip="portfolio" data-position="right"></i>
+  				</div>
+  				<div class="but-blog menu-item">
+    				<i class="fas fa-receipt blog-show" data-tooltip="blog" data-position="left"></i>
+  				</div>
+				<div class="but-contact menu-item">
+    				<i class="fas fa-envelope contact-show" data-tooltip="contact" data-position="left"></i>
+  				</div>
+			</div>
+			
+			<div class="page-wrap">
+  				<div class="page-background"></div>
+			</div>
+			
+			<!-- Language -->
+<!--
+			<div class="lang">
+                <ul>
+                    <li><a href="#" class="active">eng</a></li>
+                </ul>
+            </div>
+-->
+
+			<!-- Social -->
+			<div class="social">
+            	<ul>
+                	<li><a href="https://www.facebook.com/yusufrefay" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                	<li><a href="https://www.linkedin.com/in/yusufrefay"><i class="fab fa-linkedin" target="_blank"></i></a></li>
+                	<li><a href="https://www.instagram.com/yusufrefay"><i class="fab fa-instagram"target="_blank"></i></a></li>
+
+            	</ul>
+            </div>
+{% endblock content %}            
