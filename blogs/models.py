@@ -25,6 +25,7 @@ class blog(models.Model):
     Category = models.ForeignKey(Category, related_name="blog", on_delete= models.CASCADE,null=True)
     updated_on = models.DateTimeField(auto_now= True)
     content = models.TextField()
+    thumb = models.ImageField(default='default.jpg', blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
 

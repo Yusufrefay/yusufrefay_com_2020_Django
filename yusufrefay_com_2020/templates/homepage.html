@@ -75,8 +75,8 @@
 			<div class="social">
             	<ul>
                 	<li><a href="https://www.facebook.com/yusufrefay" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                	<li><a href="https://www.linkedin.com/in/yusufrefay"><i class="fab fa-linkedin" target="_blank"></i></a></li>
-                	<li><a href="https://www.instagram.com/yusufrefay"><i class="fab fa-instagram"target="_blank"></i></a></li>
+                	<li><a href="https://www.linkedin.com/in/yusufrefay" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                	<li><a href="https://www.instagram.com/yusufrefay"target="_blank"><i class="fab fa-instagram"></i></a></li>
 
             	</ul>
 			</div>
@@ -97,16 +97,16 @@
 					<div class="blog-item">
 						<div class="thumbnail">
 							<span class="date">{{blogs.created_on}}</span>
-							<a href="single-blog.html"><img alt="" src="{% static 'img/blog/img-1.jpg' %}"></a>
+							<a href="{% url 'detail' blogs.slug %}"><img alt="" src="{{blogs.thumb.url}}"></a>
 						</div>
 						<div class="meta">
 							<span class="aut">Posted By <b>Yusuf Refay</b></span>
 							<span class="cat"><i class="fas fa-hashtag"></i>{{blogs.Category}}</span>
 						</div>
-						<h4><a href="single-blog.html">{{blogs.title}}</a></h4>
-						<p>{{blogs.content}}</p>
+						<h4><a href="{% url 'detail' blogs.slug %}">{{blogs.title}}</a></h4>
+						<p>{{blogs.content|slice:":255" }}</p>
 						<div class="blog-btn">
-							<a href="single-blog.html" class="btn-st">Read More</a>
+							<a href="{% url 'detail' blogs.slug %}" class="btn-st">Read More</a>
 						</div>
 					</div>
 				</div>
