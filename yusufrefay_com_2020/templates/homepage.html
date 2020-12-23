@@ -91,22 +91,22 @@
 				
 				<!-- Blog Row Start -->
 				<div class="row mt-100 mb-50 mob-mt">
-				{% for blogs in blogs %}
+				{% for blog in blogs %}
 				<!-- Blog Item -->
 				<div class="col-lg-4 col-sm-6">
 					<div class="blog-item">
 						<div class="thumbnail">
-							<span class="date">{{blogs.created_on}}</span>
-							<a href="{% url 'detail' blogs.slug %}"><img alt="" src="{{blogs.thumb.url}}"></a>
+							<span class="date">{{blog.created_on}}</span>
+							<a href="{% url 'detail' blog.slug %}"><img alt="" src="{{blog.thumb.url}}"></a>
 						</div>
 						<div class="meta">
 							<span class="aut">Posted By <b>Yusuf Refay</b></span>
-							<span class="cat"><i class="fas fa-hashtag"></i>{{blogs.Category}}</span>
+							<span class="cat"><i class="fas fa-hashtag"></i>{{blog.Category}}</span>
 						</div>
-						<h4><a href="{% url 'detail' blogs.slug %}">{{blogs.title}}</a></h4>
-						<p>{{blogs.content|slice:":255" }}</p>
+						<h4><a href="{% url 'detail' blog.slug %}">{{blog.title}}</a></h4>
+						<p>{{blog.content|slice:":255" }}</p>
 						<div class="blog-btn">
-							<a href="{% url 'detail' blogs.slug %}" class="btn-st">Read More</a>
+							<a href="{% url 'detail' blog.slug %}" class="btn-st">Read More</a>
 						</div>
 					</div>
 				</div>
