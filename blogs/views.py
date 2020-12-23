@@ -3,23 +3,17 @@ from django.shortcuts import render
 from .models import blog, Category
 
 def index(request):
-    blogs = blog.objects.all()
+    blogs_queryset = blog.objects.all()
 
     context = {
-        'blogs': blogs
+        'blogs': blogs_queryset
     }
     return render(request, 'homepage.html', context)
 
 def detail(request, slug):
-    blogs = blog.objects.get(slug=slug)
+    blog_post = blog.objects.get(slug=slug)
     
     context = {
-        'blogs': blogs
+        'blog': blog_post
     }
-    # leeh dah me4 48al
-    """  blog = blog.objects.get(slug=slug)
-    
-    context = {
-        'blog': blog
-    } """
     return render(request, 'detail.html', context)
