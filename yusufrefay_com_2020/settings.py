@@ -25,7 +25,7 @@ SECRET_KEY = '0)@5cp&9vlq^rb#5q@b5x1i^1t$qlpdc#5n)m=7a(k=(8(5mks'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['yusufrefay.com', 'www.yusufrefay.com', '52.47.199.64']
 
 
 # Application definition
@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'yusufrefay_com_2020.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mywebsite',
+        'USER': 'yusufdev',
+        'PASSWORD': '659401_Yn',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
