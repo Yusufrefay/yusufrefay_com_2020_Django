@@ -8,22 +8,22 @@
         <i class="far fa-times-circle"></i>
     </a>
     <div class="blog-image">
-        <img src="{{blogs.thumb.url}}" alt="">
+        <img src="{{blog.thumb.url}}" alt="">
     </div>
     <div class="row blog-container">
         <div class="col-md-10 offset-md-1">
                 
             <!-- Heading -->
             <div class="blog-heading pt-70 pb-100">
-                <h2>{{blogs.title}}</h2>
-                <span><i class="fas fa-hashtag"></i><a href="#">{{blogs.Category}}</a></span>
+                <h2>{{blog.title}}</h2>
+                <span><i class="fas fa-hashtag"></i><a href="#">{{blog.Category}}</a></span>
                 <span><i class="fas fa-comment"></i><a href="#">5 comments</a></span>
-                <span><i class="fas fa-calendar-alt"></i>{{blogs.created_on}}</span>
+                <span><i class="fas fa-calendar-alt"></i>{{blog.created_on}}</span>
             </div>
 
             <!-- Content -->
             <div class="blog-content">
-                <p>{{blogs.content}}</p>                
+                <p>{{blog.content}}</p>                
             </div>
             <!-- Comments -->
             <div class="blog-comments mt-100">
@@ -36,7 +36,7 @@
                         <div class="comment-text">
                             <a href="#"><i class="fas fa-reply"></i>Reply</a>
                             <h4>Yusuf Refay</h4>
-                            <span>{{blogs.created_on}}</span>
+                            <span>{{blog.created_on}}</span>
                             <p>Morbi ut faucibus nulla, at fringilla est. Morbi lacinia sagittis purus.</p>
                         </div>
                         <ul>

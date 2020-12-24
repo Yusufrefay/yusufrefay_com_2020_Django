@@ -25,7 +25,7 @@ SECRET_KEY = '0)@5cp&9vlq^rb#5q@b5x1i^1t$qlpdc#5n)m=7a(k=(8(5mks'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['yusufrefay.com', 'www.yusufrefay.com', '52.47.199.64']
+ALLOWED_HOSTS = ['yusufrefay.com', 'www.yusufrefay.com', '52.47.199.64', '127.0.0.1']
 
 
 # Application definition
@@ -125,5 +125,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'yusufrefay_com_2020/static']
 
+#MEDIA_ROOT = [BASE_DIR / 'yusufrefay_com_2020/media']
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'yusufrefay_com_2020/media') 
 MEDIA_URL = '/media/'
