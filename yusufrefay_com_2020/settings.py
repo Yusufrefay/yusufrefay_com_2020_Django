@@ -125,7 +125,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'yusufrefay_com_2020/static']
 
-STATIC_ROOT = BASE_DIR / 'yusufrefay_com_2020/media'
+STATIC_ROOT = BASE_DIR / 'yusufrefay_com_2020/static'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT =  BASE_DIR / 'yusufrefay_com_2020/media'
