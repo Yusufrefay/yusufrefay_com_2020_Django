@@ -1865,11 +1865,17 @@ blockquote span img {
 }
 
 .blog-page .blog-image {
-	background-size: cover;
-    -webkit-background-size: cover;
+	object-fit: cover;
+   -webkit-background-size: cover;
     background-position: center;
 }
 
+.blog-image img {
+	object-fit:cover;
+	object-position: bottom;
+	width: 1920px;
+	height: 700px;
+}
 .blog-page h3 {
 	position: relative;
 	text-align: center;
