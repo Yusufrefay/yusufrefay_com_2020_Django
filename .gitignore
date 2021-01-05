@@ -139,7 +139,6 @@ cython_debug/
 
 #media folder
 media/
-yusufrefay_com_2020/media/
 
 #settings.py local
 settings.py
