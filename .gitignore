@@ -137,8 +137,6 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-#media folder
+#media | static folder
 media/
-
-#settings.py local
-settings.py
+static/

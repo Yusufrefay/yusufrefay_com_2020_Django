@@ -51,7 +51,7 @@
     				<i class="fas fa-briefcase portfolio-show" data-tooltip="portfolio" data-position="right"></i>
   				</div>
   				<div class="but-blog menu-item">
-    				<i class="fas fa-receipt blog-show" data-tooltip="blog" data-position="left"></i>
+    				<a href="{% url 'blogs' %}"><i class="fas fa-receipt blog-show" data-tooltip="blog" data-position="left"></i></a>
   				</div>
 				<div class="but-contact menu-item">
     				<i class="fas fa-envelope contact-show" data-tooltip="contact" data-position="left"></i>
@@ -80,42 +80,6 @@
 
             	</ul>
 			</div>
-		<!-- Blog Section -->
-		<section class="blog section" data-simplebar>
-			<div class="container">
-				<div class="header-page mt-70">
-					<i class="fas fa-receipt icon-page"></i>
-  					<i class="far fa-times-circle close-page" data-tooltip="close page" data-position="left"></i>
-					<h2>Blog</h2>
-				</div>
-				
-				<!-- Blog Row Start -->
-				<div class="row mt-100 mb-50 mob-mt">
-				{% for blog in blogs %}
-				<!-- Blog Item -->
-				<div class="col-lg-4 col-sm-6">
-					<div class="blog-item">
-						<div class="thumbnail">
-							<span class="date">{{blog.created_on}}</span>
-							<a href="{% url 'detail' blog.slug %}"><img alt="" src="{{blog.thumb.url}}"></a>
-						</div>
-						<div class="meta">
-							<span class="aut">Posted By <b>Yusuf Refay</b></span>
-							<span class="cat"><i class="fas fa-hashtag"></i>{{blog.Category}}</span>
-						</div>
-						<h4><a href="{% url 'detail' blog.slug %}">{{blog.title}}</a></h4>
-						<p>{{blog.content|slice:":255" }}</p>
-						<div class="blog-btn">
-							<a href="{% url 'detail' blog.slug %}" class="btn-st">Read More</a>
-						</div>
-					</div>
-				</div>
-				{% endfor %}
-					
-				</div>
-				<!--Blog Row End-->
-			</div>
-		</section>
 				<!-- About Section -->
 				<section class="about section" data-simplebar>
 					<div class="container">
@@ -248,7 +212,7 @@
 								<!-- Testimonail Item -->
 								<div class="testimonial-item">
 									<div class="media">
-										<img src="{% static 'img/testimonials/testimonial-2.jpg' %}" alt="">
+										<img src="{% static 'img/testimonials/testimonial-1.jpg' %}" alt="">
 										<div class="content">
 											<h4>Alex Doe</h4>
 											<p>UI/UX Designer</p>
@@ -267,7 +231,7 @@
 								<!-- Testimonail Item -->
 								<div class="testimonial-item">
 									<div class="media">
-										<img src="{% static 'img/testimonials/testimonial-3.jpg' %}" alt="">
+										<img src="{% static 'img/testimonials/testimonial-1.jpg' %}" alt="">
 										<div class="content">
 											<h4>David Doe</h4>
 											<p>UI/UX Designer</p>
@@ -673,7 +637,7 @@
 									<figcaption>
 										<h3>Project Name</h3>
 										<p>Design</p><i class="fas fa-image"></i>
-										<a class="image-link" href="{% static 'img/portfolio/img-2.jpg' %}"></a>
+										<a class="image-link" href="{% static 'img/portfolio/img-1.jpg' %}"></a>
 									</figcaption>
 								</figure>
 							</div>
@@ -681,7 +645,7 @@
 							<!-- Portfolio Item -->
 							<div class="item col-lg-4 col-sm-6 brand">
 								<figure>
-									<img alt="" src="{% static 'img/portfolio/img-3.jpg' %}">
+									<img alt="" src="{% static 'img/portfolio/img-1.jpg' %}">
 									<figcaption>
 										<h3>Project Name</h3>
 										<p>Graphic</p><i class="fas fa-video"></i>
@@ -693,11 +657,11 @@
 							<!-- Portfolio Item -->
 							<div class="item col-lg-4 col-sm-6 graphic">
 								<figure>
-									<img alt="" src="{% static 'img/portfolio/img-4.jpg' %}">
+									<img alt="" src="{% static 'img/portfolio/img-1.jpg' %}">
 									<figcaption>
 										<h3>Project Name</h3>
 										<p>Design</p><i class="fas fa-image"></i>
-										<a class="image-link" href="{% static 'img/portfolio/img-4.jpg' %}"></a>
+										<a class="image-link" href="{% static 'img/portfolio/img-1.jpg' %}"></a>
 									</figcaption>
 								</figure>
 							</div>
@@ -705,7 +669,7 @@
 							<!-- Portfolio Item -->
 							<div class="item col-lg-4 col-sm-6 design">
 								<figure>
-									<img alt="" src="{% static 'img/portfolio/img-5.jpg' %}">
+									<img alt="" src="{% static 'img/portfolio/img-1.jpg' %}">
 									<figcaption>
 										<h3>Project Name</h3>
 										<p>Design</p><i class="fas fa-video"></i>
@@ -717,11 +681,11 @@
 							<!-- Portfolio Item -->
 							<div class="item col-lg-4 col-sm-6 brand">
 								<figure>
-									<img alt="" src="{% static 'img/portfolio/img-6.jpg' %}">
+									<img alt="" src="{% static 'img/portfolio/img-1.jpg' %}">
 									<figcaption>
 										<h3>Project Name</h3>
 										<p>Brand</p><i class="fas fa-image"></i>
-										<a class="image-link" href="{% static 'img/portfolio/img-6.jpg' %}"></a>
+										<a class="image-link" href="{% static 'img/portfolio/img-1.jpg' %}"></a>
 									</figcaption>
 								</figure>
 							</div>
@@ -729,11 +693,11 @@
 							<!-- Portfolio Item -->
 							<div class="item col-lg-4 col-sm-6 graphic">
 								<figure>
-									<img alt="" src="{% static 'img/portfolio/img-7.jpg' %}">
+									<img alt="" src="{% static 'img/portfolio/img-1.jpg' %}">
 									<figcaption>
 										<h3>Project Name</h3>
 										<p>Brand</p><i class="fas fa-image"></i>
-										<a class="image-link" href="{% static 'img/portfolio/img-7.jpg' %}"></a>
+										<a class="image-link" href="{% static 'img/portfolio/img-1.jpg' %}"></a>
 									</figcaption>
 								</figure>
 							</div>
@@ -741,11 +705,11 @@
 							<!-- Portfolio Item -->
 							<div class="item col-lg-4 col-sm-6 design">
 								<figure>
-									<img alt="" src="{% static 'img/portfolio/img-8.jpg' %}">
+									<img alt="" src="{% static 'img/portfolio/img-1.jpg' %}">
 									<figcaption>
 										<h3>Project Name</h3>
 										<p>Brand</p><i class="fas fa-image"></i>
-										<a class="image-link" href="{% static 'img/portfolio/img-8.jpg' %}"></a>
+										<a class="image-link" href="{% static 'img/portfolio/img-1.jpg' %}"></a>
 									</figcaption>
 								</figure>
 							</div>
@@ -753,11 +717,11 @@
 							<!-- Portfolio Item -->
 							<div class="item col-lg-4 col-sm-6 brand">
 								<figure>
-									<img alt="" src="{% static 'img/portfolio/img-9.jpg' %}">
+									<img alt="" src="{% static 'img/portfolio/img-1.jpg' %}">
 									<figcaption>
 										<h3>Project Name</h3>
 										<p>Graphic</p><i class="fas fa-image"></i>
-										<a class="image-link" href="{% static 'img/portfolio/img-9.jpg' %}"></a>
+										<a class="image-link" href="{% static 'img/portfolio/img-1.jpg' %}"></a>
 									</figcaption>
 								</figure>
 							</div>
