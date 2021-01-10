@@ -25,7 +25,7 @@ SECRET_KEY = '0)@5cp&9vlq^rb#5q@b5x1i^1t$qlpdc#5n)m=7a(k=(8(5mks'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG_STATUS')
 
-ALLOWED_HOSTS = [os.environ.get('DJANGO_ALLOWED_HOSTS')]
+ALLOWED_HOSTS = ['yusufrefay.com', 'www.yusufrefay.com']
 
 
 # Application definition
