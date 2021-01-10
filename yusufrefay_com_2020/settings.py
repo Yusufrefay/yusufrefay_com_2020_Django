@@ -26,7 +26,7 @@ SECRET_KEY = '0)@5cp&9vlq^rb#5q@b5x1i^1t$qlpdc#5n)m=7a(k=(8(5mks'
 #DEBUG = os.environ.get('DEBUG_STATUS')
 DEBUG = 'True'
 
-ALLOWED_HOSTS = ['yusufrefay.com/', 'www.yusufrefay.com/']
+ALLOWED_HOSTS = ['yusufrefay.com', 'www.yusufrefay.com']
 
 
 # Application definition
