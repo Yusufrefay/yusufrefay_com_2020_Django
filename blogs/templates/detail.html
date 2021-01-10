@@ -2,6 +2,21 @@
 {% load static %}
 {% block content %}
 
+<!-- Pre Loader -->
+<div id="preloader">
+    <div class="loading">
+        <div class="circle"></div>
+        <div class="text-loading">
+            <span data-text-preloader="B" class="letters">R</span>
+            <span data-text-preloader="L" class="letters">E</span>
+            <span data-text-preloader="O" class="letters">F</span>
+            <span data-text-preloader="G" class="letters">A</span>
+            <span data-text-preloader="S" class="letters">y</span>
+        </div>
+    </div>	
+</div>
+
+
 <!--Blog Page-->
 <div class="blog-page" data-simplebar>
     <a href="{% url 'blogs' %}" class="close-blog" data-tooltip="close blog" data-position="bottom">
