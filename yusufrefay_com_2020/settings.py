@@ -129,7 +129,9 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [BASE_DIR / 'yusufrefay_com_2020/static/']
 
-STATIC_ROOT = os.environ.get('STATIC_ROOT')
+# STATIC_ROOT = os.environ.get('STATIC_ROOT')
+
+STATIC_ROOT = '/static/'
 
 MEDIA_URL = '/media/'
 
