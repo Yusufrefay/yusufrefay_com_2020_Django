@@ -30,24 +30,24 @@
         <!-- Blog Row Start -->
         <div class="row mt-100 mb-50 mob-mt">
         {% for blog in blogs %}
-        <!-- Blog Item -->
-        <div class="col-lg-4 col-sm-6">
-            <div class="blog-item">
-                <div class="thumbnail">
-                    <span class="date">{{blog.created_on}}</span>
-                    <a href="{% url 'detail' blog.slug %}"><img alt="" src="{{blog.thumb.url}}"></a>
+                <!-- Blog Item -->
+                <div class="col-lg-4 col-sm-6">
+                    <div class="blog-item">
+                        <div class="thumbnail">
+                            <span class="date">{{blog.created_on}}</span>
+                            <a href="{% url 'detail' blog.slug %}"><img alt="" src="{{blog.thumb.url}}"></a>
+                        </div>
+                        <div class="meta">
+                            <span class="aut">Posted By <b>Yusuf Refay</b></span>
+                            <span class="cat"><i class="fas fa-hashtag"></i>{{blog.Category}}</span>
+                        </div>
+                        <h4><a href="{% url 'detail' blog.slug %}">{{blog.title}}</a></h4>
+                        <p>{{blog.content|slice:":255" }}</p>
+                        <div class="blog-btn">
+                            <a href="{% url 'detail' blog.slug %}" class="btn-st">Read More</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="meta">
-                    <span class="aut">Posted By <b>Yusuf Refay</b></span>
-                    <span class="cat"><i class="fas fa-hashtag"></i>{{blog.Category}}</span>
-                </div>
-                <h4><a href="{% url 'detail' blog.slug %}">{{blog.title}}</a></h4>
-                <p>{{blog.content|slice:":255" }}</p>
-                <div class="blog-btn">
-                    <a href="{% url 'detail' blog.slug %}" class="btn-st">Read More</a>
-                </div>
-            </div>
-        </div>
         {% endfor %}
             
         </div>

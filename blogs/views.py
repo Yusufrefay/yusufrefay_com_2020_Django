@@ -7,8 +7,7 @@ def index(request):
     return render(request, 'homepage.html')
 
 def blogs(request):
-    blogs_queryset = Blog.objects.all()
-
+    blogs_queryset = Blog.objects.filter(status=1).order_by('-created_on')
     context = {
         'blogs': blogs_queryset
     }

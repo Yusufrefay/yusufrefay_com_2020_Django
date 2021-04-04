@@ -25,10 +25,10 @@ class Blog(models.Model):
     Category = models.ForeignKey(Category, related_name="blog", on_delete= models.CASCADE,null=True)
     updated_on = models.DateTimeField(auto_now= True)
     content = models.TextField()
-    thumb = models.ImageField(default='default.jpg', blank=True)
-    Blog_Background= models.ImageField(default='default.jpg', blank=True)
+    thumb = models.ImageField(default='default.jpg', blank=True, upload_to='thumbs/')
+    Blog_Background= models.ImageField(default='default.jpg', blank=True, upload_to='blog_backgrounds/')
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=1)
 
     class Meta:
         ordering = ['-created_on']
