@@ -198,6 +198,41 @@ blockquote span img {
 .btn-st:focus {
 	color: #fff;
 }
+.page-link-btn {
+	position: relative;
+	display: inline-block;
+	top: 0;
+	color: #fff;
+	font-size: 15px;
+	cursor: pointer;
+	padding: 8px 22px;
+	border: none;
+	-webkit-border-radius: 30px;
+	border-radius: 30px;
+	background-color: #1a2a41;
+	-webkit-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-transition: all .2s ease;
+	-moz-transition: all .2s ease;
+	-o-transition: all .2s ease;
+	transition: all .2s ease;
+	margin: 5px;
+}
+.page-link-btn:hover {
+		color: #fff;
+		top: -10px;
+		-webkit-box-shadow: 0px 10px 15px rgba(26, 42, 65, .3);
+		box-shadow: 0px 10px 15px rgba(26, 42, 65, .3);
+		-webkit-transform: rotateX(25deg);
+		-ms-transform: rotateX(25deg);
+		transform: rotateX(25deg);
+	}
+.page-link-btn:active {
+		top: 0px;
+		-webkit-box-shadow: 0px 0px 0px rgba(26, 42, 65, 0);
+		box-shadow: 0px 0px 0px rgba(26, 42, 65, 0);
+	}
 
 /* ---------- Margin & Padding --------- */
 

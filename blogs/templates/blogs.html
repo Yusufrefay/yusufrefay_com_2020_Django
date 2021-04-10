@@ -48,10 +48,21 @@
                         </div>
                     </div>
                 </div>
-        {% endfor %}
+            {% endfor %}
             
         </div>
         <!--Blog Row End-->
+        
+        <nav aria-label="Page navigation example" class="mb-2">
+            <ul class="pagination pagination justify-content-center">
+            {% if blogs.has_previous %}
+              <li class="page-item"><a class="page-link-btn" href="?page={{ page_obj.previous_page_number }}">Previous Page</a></li>
+            {% endif %}
+            {% if blogs.has_next %}
+              <li class="page-item"><a class="page-link-btn" href="?page={{ page_obj.next_page_number }}">Next Page</a></li>
+              {% endif %}
+            </ul>
+          </nav>
     </div>
 </section>
 {% endblock content %}        
