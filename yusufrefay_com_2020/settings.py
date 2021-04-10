@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'yusufrefay_com_2020.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mywebsite',
-        'USER': 'yusufdev',
-        'PASSWORD': '659401_Yn',
+        'NAME': 'django',
+        'USER': 'django',
+        'PASSWORD': 'ef2e7a4b8cb6d2e9b752974de1396977',
         'HOST': 'localhost',
         'PORT': '',
     }
@@ -129,7 +129,9 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [BASE_DIR / 'yusufrefay_com_2020/static/']
 
-STATIC_ROOT = os.environ.get('STATIC_ROOT')
+# STATIC_ROOT = os.environ.get('STATIC_ROOT')
+
+STATIC_ROOT = 'static'
 
 MEDIA_URL = '/media/'
 
