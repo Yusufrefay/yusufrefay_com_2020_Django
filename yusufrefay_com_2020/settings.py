@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'yusufrefay_com_2020.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django',
-        'USER': 'django',
-        'PASSWORD': 'ef2e7a4b8cb6d2e9b752974de1396977',
+        'NAME': 'mywebsite',
+        'USER': 'yusufdev',
+        'PASSWORD': '659401_Yn',
         'HOST': 'localhost',
         'PORT': '',
     }
