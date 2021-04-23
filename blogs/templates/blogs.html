@@ -13,11 +13,11 @@
             <span data-text-preloader="G" class="letters">U</span>
             <span data-text-preloader="S" class="letters">F</span>
         </div>
-    </div>	
+    </div>
 </div>
 
 <!-- Blog Section -->
-<section id="blog-section" class="blog section" data-simplebar>
+<section id="blog-section" class="blog section about" data-simplebar>
     <div class="container">
         <div class="header-page mt-70">
             <i class="fas fa-receipt icon-page"></i>
@@ -26,43 +26,74 @@
             </a>
             <h2>Blog</h2>
         </div>
-        
+
         <!-- Blog Row Start -->
         <div class="row mt-100 mb-50 mob-mt">
-        {% for blog in blogs %}
-                <!-- Blog Item -->
-                <div class="col-lg-4 col-sm-6">
-                    <div class="blog-item">
-                        <div class="thumbnail">
-                            <span class="date">{{blog.created_on}}</span>
-                            <a href="{% url 'detail' blog.slug %}"><img alt="" src="{{blog.thumb.url}}"></a>
-                        </div>
-                        <div class="meta">
-                            <span class="aut">Posted By <b>Yusuf Refay</b></span>
-                            <span class="cat"><i class="fas fa-hashtag"></i>{{blog.Category}}</span>
-                        </div>
-                        <h4><a href="{% url 'detail' blog.slug %}">{{blog.title}}</a></h4>
-                        <p>{{blog.content|slice:":255" }}</p>
-                        <div class="blog-btn">
-                            <a href="{% url 'detail' blog.slug %}" class="btn-st">Read More</a>
-                        </div>
+            {% for blog in blogs %}
+            <!-- Blog Item -->
+            <div class="col-lg-4 col-sm-6">
+                <div class="blog-item">
+                    <div class="thumbnail">
+                        <span class="date">{{blog.created_on}}</span>
+                        <a href="{% url 'detail' blog.slug %}"><img alt="" src="{{blog.thumb.url}}"></a>
+                    </div>
+                    <div class="meta">
+                        <span class="aut">Posted By <b>Yusuf Refay</b></span>
+                        <span class="cat"><i class="fas fa-hashtag"></i>{{blog.Category}}</span>
+                    </div>
+                    <h4><a href="{% url 'detail' blog.slug %}">{{blog.title}}</a></h4>
+                    <p>{{blog.content|slice:":255" }}</p>
+                    <div class="blog-btn">
+                        <a href="{% url 'detail' blog.slug %}" class="btn-st">Read More</a>
                     </div>
                 </div>
+            </div>
             {% endfor %}
-            
+
         </div>
         <!--Blog Row End-->
-        
-        <nav aria-label="Page navigation example" class="mb-2">
+
+        <div class="row testimonial mt-60">
+            <!-- Header Block -->
+            <div class="col-md-12">
+                <div class="header-box mb-50">
+                    <h3>Quotes</h3>
+                </div>
+            </div>
+
+            <div class="owl-carousel owl-theme">
+            {% for Quote in quotes %}
+                <!-- Testimonail Item -->
+                <div class="testimonial-item">
+                    <div class="media">
+                        <img src="{% static 'img/new-photo-256px.png' %}" alt="">
+                        <div class="content">
+                            <h4>{{Quote.title}}</h4>
+                            <p>{{Quote.Category}}</p>
+                            <p class="pb-0 pt-0 mb-0">{{Quote.created_on}}</p>
+                        </div>
+                    </div>
+                    <div class="comment pt-15">
+                        <p>{{Quote.content}}</p>
+                    </div>
+                
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- pagination Section -->
+        <nav aria-label="Page navigation example" class="mb-2 mt-60">
             <ul class="pagination pagination justify-content-center">
-            {% if blogs.has_previous %}
-              <li class="page-item"><a class="page-link-btn" href="?page={{ page_obj.previous_page_number }}">Previous Page</a></li>
-            {% endif %}
-            {% if blogs.has_next %}
-              <li class="page-item"><a class="page-link-btn" href="?page={{ page_obj.next_page_number }}">Next Page</a></li>
-              {% endif %}
+                {% if blogs.has_previous %}
+                <li class="page-item"><a class="page-link-btn" href="?page={{ page_obj.previous_page_number }}">Previous
+                        Page</a></li>
+                {% endif %}
+                {% if blogs.has_next %}
+                <li class="page-item"><a class="page-link-btn" href="?page={{ page_obj.next_page_number }}">Next
+                        Page</a></li>
+                {% endif %}
             </ul>
-          </nav>
+        </nav>
     </div>
 </section>
-{% endblock content %}        
+{% endblock content %}

@@ -18,6 +18,7 @@ from django.urls import include, path
 from blogs.views import detail,blogs
 from django.conf import settings
 from django.conf.urls.static import static
+# from blogs import views
 
 
 urlpatterns = [

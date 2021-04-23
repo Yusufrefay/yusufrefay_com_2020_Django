@@ -13,7 +13,7 @@
             <span data-text-preloader="G" class="letters">A</span>
             <span data-text-preloader="S" class="letters">Y</span>
         </div>
-    </div>	
+    </div>
 </div>
 
 
@@ -27,98 +27,78 @@
     </div>
     <div class="row blog-container">
         <div class="col-md-10 offset-md-1">
-                
+
             <!-- Heading -->
             <div class="blog-heading pt-70 pb-100">
                 <h2>{{blog.title}}</h2>
-                <span><i class="fas fa-hashtag"></i><a href="#">{{blog.Category}}</a></span>
-                <span><i class="fas fa-comment"></i><a href="#">5 comments</a></span>
+                <span><i class="fas fa-hashtag"></i>{{blog.Category}}</span>
+                <span><i class="fas fa-comment"></i> {{ comments.count }} comments</span>
                 <span><i class="fas fa-calendar-alt"></i>{{blog.created_on}}</span>
             </div>
 
             <!-- Content -->
             <div class="blog-content">
-                <p>{{blog.content}}</p>                
+                <p>{{blog.content}}</p>
             </div>
             <!-- Comments -->
+
             <div class="blog-comments mt-100">
                 <h3 class="mb-50">Comments</h3>
                 <ul>
+                    {% for Comment in comments %}
                     <li>
                         <div class="author-img">
                             <img src="{% static 'img/user-photo.jpg' %}" alt="">
                         </div>
                         <div class="comment-text">
-                            <a href="#"><i class="fas fa-reply"></i>Reply</a>
-                            <h4>Yusuf Refay</h4>
-                            <span>{{blog.created_on}}</span>
-                            <p>Morbi ut faucibus nulla, at fringilla est. Morbi lacinia sagittis purus.</p>
-                        </div>
-                        <ul>
-                            <li>
-                                <div class="author-img">
-                                    <img src="{% static 'img/user-photo.jpg' %}" alt="">
-                                </div>
-                                <div class="comment-text">
-                                    <h4>Kriss Doe</h4>
-                                    <span>Aug 15, 2018 at 8:11 am</span>
-                                    <p>Morbi ut faucibus nulla, at fringilla est. Morbi lacinia sagittis purus, nec dapibus felis tempus in. Quisque eget elementum sem, cursus tristique orci.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                        
-                    <li>
-                        <div class="author-img">
-                            <img src="img/blog/authors/author-3.png" alt="">
-                        </div>
-                        <div class="comment-text">
-                            <a href="#"><i class="fas fa-reply"></i>Reply</a>
-                            <h4>Emma Doe</h4>
-                            <span>Aug 15, 2018 at 8:11 am</span>
-                            <p>Morbi ut faucibus nulla, at fringilla est. Morbi lacinia sagittis purus.</p>
+                            <h4>{{ Comment.name }}</h4>
+                            <span>{{ Comment.created_on }}</span>
+                            <p>{{ Comment.body | linebreaks }}</p>
                         </div>
                     </li>
+                    {% endfor %}
+                </ul>
                 </ul>
             </div>
 
             <!--Blog Form-->
             <h3 class="mt-100 mb-50">Leave a comment</h3>
-            
-            <form class="form-wrap validate-form mb-100">
-                
-                <!--Full name-->
-                <div class="validate-input">
-                    <input id="name" class="input" type="text" name="name" placeholder="Full name">
-                    <span class="focus-input"></span>
-                    <label class="label-input" for="name">
-                        <i class="fas fa-user"></i>
-                    </label>
+            <form class="form-wrap validate-form mb-100" method="post">
+                <div class="card-body">
+                    {% if new_comment %}
+                    <div class="alert alert-success" role="alert">
+                        Your comment is awaiting moderation
+                    </div>
+                    {% else %}
                 </div>
+                    {% for field in comment_form %}
+                    <div class="validate-input">
+                        {{field}}
+                        <span class="focus-input"></span>
+                        {% if field.name == 'body' %}
+                            <label class="label-input comment" for="comment">
+                        {% else %}
+                            <label class="label-input" for="{{field.name}}">
+                        {% endif %}
 
-                <!--Email-->
-                <div class="validate-input">
-                    <input id="email" class="input" type="text" name="email" placeholder="example@example.com">
-                    <span class="focus-input"></span>
-                    <label class="label-input" for="email">
-                        <i class="fas fa-envelope"></i>
-                    </label>
-                </div>
-
-                <!--Massage-->
-                <div class="validate-input">
-                    <textarea id="message" class="input" name="message" placeholder="Your comments..."></textarea>
-                    <span class="focus-input"></span>
-                    <label class="label-input comment" for="message">
-                        <i class="fas fa-comment"></i>
-                    </label>
-                </div>
-                <div class="form-btn">
-                    <a href="#" class="btn-st">Send a comment</a>
-                </div>
-            </form>
+                        {% if field.name == 'name' %}
+                            <i class="fas fa-user"></i>
+                        {% elif field.name == 'email' %}
+                            <i class="fas fa-envelope"></i>
+                        {% else %}
+                            <i class="fas fa-comment"></i>
+                        {% endif %}
+                        </label>
+                    </div>
+                    {% endfor %}
+                        {% csrf_token %}
+                        <div class="form-btn">
+                            <button type="submit" class="btn-st">Send a comment</button>
+                        </div>
+                    
+                    {% endif %}
+                </form>
         </div>
     </div>
-</div>
 
-{% endblock content %}        
+    {% endblock content %}
