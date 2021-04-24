@@ -8,7 +8,7 @@ from django.shortcuts import render, get_object_or_404
 def index(request):
     return render(request, 'homepage.html')
 
-def blogs(request):
+def BlogsView(request):
     blogs_queryset = Blog.objects.filter(status=1).order_by('-created_on')
     quotes_queryset = Quote.objects.filter(status=1).order_by('-created_on')
     paginator = Paginator(blogs_queryset, 3)
@@ -18,8 +18,6 @@ def blogs(request):
         page = paginator.page(page_number)
     except EmptyPage:   
         page = paginator.page(1)      
-    print("Page Number is ")
-    print(page_number)
     context = {
         'blogs': page,
         'page_obj': page_obj,
@@ -27,7 +25,7 @@ def blogs(request):
     }
     return render(request, 'blogs.html', context)
 
-def detail(request, slug):
+def DetailView(request, slug):
     blog_post = get_object_or_404(Blog, slug=slug)
     comments = blog_post.comments.filter(active=1).order_by('-created_on')
     new_comment = None
@@ -50,3 +48,22 @@ def detail(request, slug):
         'new_comment': new_comment,
         'comment_form': comment_form}
     return render(request, 'detail.html', context)
+
+def CategoryView(request, slug):
+    category = Category.objects.get(slug=slug)
+    category_posts = Blog.objects.filter(status=1, Category = category).order_by('-created_on')
+    quotes_queryset = Quote.objects.filter(status=1).order_by('-created_on')
+    paginator = Paginator(category_posts, 3)
+    page_number = request.GET.get('page', 1)
+    page_obj = paginator.get_page(page_number)
+    try:
+        page = paginator.page(page_number)
+    except EmptyPage:   
+        page = paginator.page(1)      
+    context = {
+        'category':category,
+        'category_posts': page,
+        'page_obj': page_obj,
+        'quotes':  quotes_queryset
+    }
+    return render(request, 'category.html', context)

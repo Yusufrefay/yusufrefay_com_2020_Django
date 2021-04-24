@@ -31,7 +31,7 @@
             <!-- Heading -->
             <div class="blog-heading pt-70 pb-100">
                 <h2>{{blog.title}}</h2>
-                <span><i class="fas fa-hashtag"></i>{{blog.Category}}</span>
+                <span><i class="fas fa-hashtag"></i><a href="{% url 'category' blog.Category.slug %}">{{blog.Category}}</a></span>
                 <span><i class="fas fa-comment"></i> {{ comments.count }} comments</span>
                 <span><i class="fas fa-calendar-alt"></i>{{blog.created_on}}</span>
             </div>

@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Category, Blog, Quote, Quotefield, Comment
 
 class BlogAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'status','created_on')
+    list_display = ('title', 'slug','Category', 'status','created_on')
     list_filter = ("status",)
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
