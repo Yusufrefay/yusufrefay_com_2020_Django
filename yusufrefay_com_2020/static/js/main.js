@@ -228,11 +228,6 @@ $(document).ready(function() {
     });
 	
 	/* -----------------------------------
-	      	7. YouTube Video
-	----------------------------------- */
-	$("#play-video").YTPlayer();
-	
-	/* -----------------------------------
 	    8. Validate Contact Form
 	----------------------------------- */
 	$('.validate-input .input').each(function(){

@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class Category(models.Model):
@@ -24,7 +25,7 @@ class Blog(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     Category = models.ForeignKey(Category, related_name="blog", on_delete= models.CASCADE,null=True)
     updated_on = models.DateTimeField(auto_now= True)
-    content = models.TextField()
+    content = RichTextField(blank=True, null=True)
     thumb = models.ImageField(default='default.jpg', blank=True, upload_to='Blogs/thumbs/')
     Blog_Background= models.ImageField(default='default.jpg', blank=True, upload_to='Blogs/blog_backgrounds/')
     created_on = models.DateTimeField(auto_now_add=True)

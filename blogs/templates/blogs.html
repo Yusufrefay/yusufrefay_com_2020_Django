@@ -42,7 +42,8 @@
                         <span class="cat"><i class="fas fa-hashtag"></i><a href="{% url 'category' blog.Category.slug %}">{{blog.Category}}</a></span>
                     </div>
                     <h4><a href="{% url 'detail' blog.slug %}">{{blog.title}}</a></h4>
-                    <p>{{blog.content|slice:":255" }}</p>
+                    <p>{{blog.content|safe|slice:":255" }}</p>
+                    
                     <div class="blog-btn">
                         <a href="{% url 'detail' blog.slug %}" class="btn-st">Read More</a>
                     </div>
@@ -63,7 +64,6 @@
 
             <div class="owl-carousel owl-theme">
             {% for Quote in quotes %}
-                <!-- Testimonail Item -->
                 <div class="testimonial-item">
                     <div class="media">
                         <img src="{% static 'img/new-photo-256px.png' %}" alt="">
@@ -95,5 +95,8 @@
             </ul>
         </nav>
     </div>
+    <div class="copy d-flex justify-content-center">
+            	<p>2019 © Yusufrefay. All Right Reserved.</p>
+        	</div>
 </section>
 {% endblock content %}
