@@ -1,9 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage
 ##from django.http import HttpResponse
 from .models import Blog, Category, Quote, Quotefield, Comment
 from .forms import CommentForm
-from django.shortcuts import render, get_object_or_404
 
 def index(request):
     return render(request, 'homepage.html')
@@ -71,7 +70,7 @@ def CategoryView(request, slug):
 def ContactView (request):
     return render(request, 'contact-me.html')
 def AboutView (request):
-    return render(request, 'templates/about-me.html')
+    return render(request, 'about-me.html')
 def PortfolioView (request):
     return render(request, 'portfolio.html')
 def ResumeView (request):
