@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- Preloader -->
+<div id="preloader">
+    <div class="loading">
+        <div class="circle"></div>
+        <div class="text-loading">
+            <span data-text-preloader="R" class="letters">Y</span>
+            <span data-text-preloader="E" class="letters">U</span>
+            <span data-text-preloader="F" class="letters">S</span>
+            <span data-text-preloader="A" class="letters">U</span>
+            <span data-text-preloader="Y" class="letters">F</span>
+        </div>
+    </div>
+</div>
+<!-- Portfolio Section -->
+<section id="portfolio-section" class="portfolio section" data-simplebar>
+    <div class="container">
+        <div class="header-page mt-70">
+            <i class="fas fa-receipt icon-page"></i>
+            <a href="{% url 'index' %}">
+                <i class="far fa-times-circle close-page" data-tooltip="close page" data-position="left"></i>
+            </a>
+            <h2>Portfolio</h2>
+        </div>
+
+        <!-- Portfolio Filter Row Start -->
+        <div class="row mt-100 mob-mt">
+            <div class="col-lg-12 col-sm-12 portfolio-filter">
+                <ul>
+                    <li class="active" data-filter="*">All</li>
+                    <li data-filter=".brand">Brand</li>
+                    <li data-filter=".design">Design</li>
+                    <li data-filter=".graphic">Graphic</li>
+                </ul>
+            </div>
+        </div>
+        <!-- Portfolio Filter Row End -->
+
+        <!-- Portfolio Item Row Start -->
+        <div class="row portfolio-items mt-100 mb-100">
+
+            <!-- Portfolio Item -->
+            <div class="item col-lg-4 col-sm-6 graphic">
+                <figure>
+                    <img alt="" src="{% static 'img/portfolio/img-1.jpg' %}">
+                    <figcaption>
+                        <h3>Project Name</h3>
+                        <p>Graphic</p><i class="fas fa-image"></i>
+                        <a class="image-link" href="{% static 'img/portfolio/img-1.jpg' %}"></a>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <!-- Portfolio Item -->
+            <div class="item col-lg-4 col-sm-6 design">
+                <figure>
+                    <img alt="" src="{% static 'img/portfolio/img-2.jpg' %}">
+                    <figcaption>
+                        <h3>Project Name</h3>
+                        <p>Design</p><i class="fas fa-image"></i>
+                        <a class="image-link" href="{% static 'img/portfolio/img-1.jpg' %}"></a>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <!-- Portfolio Item -->
+            <div class="item col-lg-4 col-sm-6 brand">
+                <figure>
+                    <img alt="" src="{% static 'img/portfolio/img-1.jpg' %}">
+                    <figcaption>
+                        <h3>Project Name</h3>
+                        <p>Graphic</p><i class="fas fa-video"></i>
+                        <a class="video-link" href="https://www.youtube.com/watch?v=k_okcNVZqqI"></a>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <!-- Portfolio Item -->
+            <div class="item col-lg-4 col-sm-6 graphic">
+                <figure>
+                    <img alt="" src="{% static 'img/portfolio/img-1.jpg' %}">
+                    <figcaption>
+                        <h3>Project Name</h3>
+                        <p>Design</p><i class="fas fa-image"></i>
+                        <a class="image-link" href="{% static 'img/portfolio/img-1.jpg' %}"></a>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <!-- Portfolio Item -->
+            <div class="item col-lg-4 col-sm-6 design">
+                <figure>
+                    <img alt="" src="{% static 'img/portfolio/img-1.jpg' %}">
+                    <figcaption>
+                        <h3>Project Name</h3>
+                        <p>Design</p><i class="fas fa-video"></i>
+                        <a class="video-link" href="https://www.youtube.com/watch?v=k_okcNVZqqI"></a>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <!-- Portfolio Item -->
+            <div class="item col-lg-4 col-sm-6 brand">
+                <figure>
+                    <img alt="" src="{% static 'img/portfolio/img-1.jpg' %}">
+                    <figcaption>
+                        <h3>Project Name</h3>
+                        <p>Brand</p><i class="fas fa-image"></i>
+                        <a class="image-link" href="{% static 'img/portfolio/img-1.jpg' %}"></a>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <!-- Portfolio Item -->
+            <div class="item col-lg-4 col-sm-6 graphic">
+                <figure>
+                    <img alt="" src="{% static 'img/portfolio/img-1.jpg' %}">
+                    <figcaption>
+                        <h3>Project Name</h3>
+                        <p>Brand</p><i class="fas fa-image"></i>
+                        <a class="image-link" href="{% static 'img/portfolio/img-1.jpg' %}"></a>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <!-- Portfolio Item -->
+            <div class="item col-lg-4 col-sm-6 design">
+                <figure>
+                    <img alt="" src="{% static 'img/portfolio/img-1.jpg' %}">
+                    <figcaption>
+                        <h3>Project Name</h3>
+                        <p>Brand</p><i class="fas fa-image"></i>
+                        <a class="image-link" href="{% static 'img/portfolio/img-1.jpg' %}"></a>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <!-- Portfolio Item -->
+            <div class="item col-lg-4 col-sm-6 brand">
+                <figure>
+                    <img alt="" src="{% static 'img/portfolio/img-1.jpg' %}">
+                    <figcaption>
+                        <h3>Project Name</h3>
+                        <p>Graphic</p><i class="fas fa-image"></i>
+                        <a class="image-link" href="{% static 'img/portfolio/img-1.jpg' %}"></a>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+        <!-- Portfolio Item Row End -->
+    </div>
+</section>
+{% endblock content %}

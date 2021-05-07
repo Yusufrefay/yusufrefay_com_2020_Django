@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- Preloader -->
+<div id="preloader">
+    <div class="loading">
+        <div class="circle"></div>
+        <div class="text-loading">
+            <span data-text-preloader="R" class="letters">Y</span>
+            <span data-text-preloader="E" class="letters">U</span>
+            <span data-text-preloader="F" class="letters">S</span>
+            <span data-text-preloader="A" class="letters">U</span>
+            <span data-text-preloader="Y" class="letters">F</span>
+        </div>
+    </div>
+</div>
+<!-- Contact Section -->
+<section id="contact-section" class="contact section" data-simplebar>
+    <div class="container">
+        <div class="header-page mt-70">
+            <i class="fas fa-envelope icon-page"></i>
+            <a href="{% url 'index' %}">
+                <i class="far fa-times-circle close-page" data-tooltip="close page" data-position="left"></i>
+            </a>
+            <h2>Contact</h2>
+        </div>
+        <div class="row mt-100 mob-mt">
+
+            <div class="col-lg-8 col-sm-12">
+
+                <!--Form Start-->
+                <form class="form-wrap validate-form">
+
+                    <!--Full name-->
+                    <div class="validate-input">
+                        <input id="name" class="input" type="text" name="name" placeholder="Full name">
+                        <span class="focus-input"></span>
+                        <label class="label-input" for="name">
+                            <i class="fas fa-user"></i>
+                        </label>
+                    </div>
+
+                    <!--Email-->
+                    <div class="validate-input">
+                        <input id="email" class="input" type="text" name="email" placeholder="example@example.com">
+                        <span class="focus-input"></span>
+                        <label class="label-input" for="email">
+                            <i class="fas fa-envelope"></i>
+                        </label>
+                    </div>
+
+                    <!--Massage-->
+                    <div class="validate-input">
+                        <textarea id="message" class="input" name="message" placeholder="Your message..."></textarea>
+                        <span class="focus-input"></span>
+                        <label class="label-input comment" for="message">
+                            <i class="fas fa-comment"></i>
+                        </label>
+                    </div>
+                    <div class="form-btn">
+                        <a href="#" class="btn-st">Talk to A Human</a>
+                    </div>
+                </form>
+                <!--Form End-->
+            </div>
+
+            <div class="col-lg-4 col-sm-12">
+
+                <!--Contact Info Row Start-->
+                <div class="box">
+                    <div class="row">
+
+                        <!--Contact Info Item-->
+                        <div class="col-lg-12">
+                            <div class="info-item">
+                                <span class="icon"><i class="fas fa-paper-plane"></i></span>
+                                <h4>Email:</h4>
+                                <p><a href="mailto:example@example.com">yusufrefay@outlook.com</a></p>
+                            </div>
+                        </div>
+
+                        <!--Contact Info Item-->
+                        <div class="col-lg-12">
+                            <div class="info-item">
+                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+                                <h4>Addres</h4>
+                                <p>Cairo, Egypt</p>
+                            </div>
+                        </div>
+
+                        <!--Contact Info Item-->
+                        <div class="col-lg-12">
+                            <div class="info-item">
+                                <span class="icon"><i class="fas fa-phone"></i></span>
+                                <h4>Phone</h4>
+                                <p>(+20) 01099924558</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Contact Info Row End-->
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

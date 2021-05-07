@@ -66,4 +66,13 @@ def CategoryView(request, slug):
         'page_obj': page_obj,
         'quotes':  quotes_queryset
     }
-    return render(request, 'category.html', context)
+    return render(request, 'category.html',context)
+
+def ContactView (request):
+    return render(request, 'contact-me.html')
+def AboutView (request):
+    return render(request, 'about-me.html')
+def PortfolioView (request):
+    return render(request, 'portfolio.html')
+def ResumeView (request):
+    return render(request, 'resume.html')

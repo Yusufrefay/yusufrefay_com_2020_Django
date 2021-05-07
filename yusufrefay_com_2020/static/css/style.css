@@ -2074,6 +2074,47 @@ blockquote span img {
 	overflow: auto;
 	z-index: 50;
 }
+#contact-section {
+    background-color: #fff;
+	display: block;
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+	overflow: auto;
+	z-index: 50;
+}
+#about-section {
+    background-color: #fff;
+	display: block;
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+	overflow: auto;
+	z-index: 50;
+}
+#resume-section {
+    background-color: #fff;
+	display: block;
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+	overflow: auto;
+	z-index: 50;
+}
+#portfolio-section {
+    background-color: #fff;
+	display: block;
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+	overflow: auto;
+	z-index: 50;
+}
+
 /* ---------------------------------
 		11. Preloader Css
 --------------------------------- */
