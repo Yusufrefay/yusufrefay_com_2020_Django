@@ -71,7 +71,7 @@ def CategoryView(request, slug):
 def ContactView (request):
     return render(request, 'contact-me.html')
 def AboutView (request):
-    return render(request, 'about-me.html')
+    return render(request, 'templates/about-me.html')
 def PortfolioView (request):
     return render(request, 'portfolio.html')
 def ResumeView (request):
