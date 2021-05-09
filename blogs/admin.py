@@ -6,6 +6,13 @@ class BlogAdmin(admin.ModelAdmin):
     list_filter = ("status",)
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
+    actions = ['Publish_blog', 'Draft_blog']
+
+    def Publish_blog(self, request, queryset):
+        queryset.update(status=True)
+    
+    def Draft_blog(self, request, queryset):
+        queryset.update(status=False)
 
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'body', 'blog_post', 'created_on', 'active')
