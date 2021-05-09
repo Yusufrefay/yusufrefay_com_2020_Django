@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage
 ##from django.http import HttpResponse
-from .models import Blog, Category, Quote, Quotefield, Comment
+from .models import Blog, Category, Quote, Quotefield, Comment, Photographer
 from .forms import CommentForm
 
 def index(request):

@@ -23,7 +23,7 @@
         <i class="far fa-times-circle"></i>
     </a>
     <div class="blog-image">
-        <img src="{{blog.Blog_Background.url}}" alt="">
+        <a href="{{ blog.photographer.portfolio_url }}" title="the Image is taken by {{ blog.photographer.photographer_name }}" target="_blank"><img src="{{blog.Blog_Background.url}}" alt=""></a>
     </div>
     <div class="row blog-container">
         <div class="col-md-10 offset-md-1">
@@ -43,7 +43,7 @@
             <!-- Comments -->
 
             <div class="blog-comments mt-100">
-                <h3 class="mb-50">Comments</h3>
+                <h3 class="mb-50">Comments</h3>              
                 <ul>
                     {% for Comment in comments %}
                     <li>

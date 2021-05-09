@@ -35,7 +35,7 @@
                 <div class="blog-item">
                     <div class="thumbnail">
                         <span class="date">{{blog.created_on}}</span>
-                        <a href="{% url 'detail' blog.slug %}"><img alt="" src="{{blog.thumb.url}}"></a>
+                        <a href="{% url 'detail' blog.slug %}" title="the Image is taken by {{ blog.photographer.photographer_name }}"><img alt="" src="{{blog.thumb.url}}"></a>
                     </div>
                     <div class="meta">
                         <span class="aut">Posted By <b>Yusuf Refay</b></span>

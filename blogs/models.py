@@ -20,6 +20,13 @@ STATUS = (
     (1,"Publish")
 )
 
+class Photographer(models.Model):
+    photographer_name = models.CharField(max_length=50, unique=True)
+    portfolio_url = models.CharField(max_length=250)
+    
+    def __str__(self):
+        return self.photographer_name
+
 class Blog(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -28,6 +35,7 @@ class Blog(models.Model):
     content = RichTextField(blank=True, null=True)
     thumb = models.ImageField(default='default.jpg', blank=True, upload_to='Blogs/thumbs/')
     Blog_Background= models.ImageField(default='default.jpg', blank=True, upload_to='Blogs/blog_backgrounds/')
+    photographer = models.ForeignKey(Photographer, on_delete= models.CASCADE,null=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=1)
 

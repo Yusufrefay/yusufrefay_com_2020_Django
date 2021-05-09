@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Blog, Quote, Quotefield, Comment
+from .models import Category, Blog, Quote, Quotefield, Comment, Photographer
 
 class BlogAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug','Category', 'status','created_on')
@@ -31,3 +31,4 @@ admin.site.register(Comment, CommentAdmin)
 admin.site.register(Blog, BlogAdmin)
 admin.site.register(Quotefield)
 admin.site.register(Category)
+admin.site.register(Photographer)
