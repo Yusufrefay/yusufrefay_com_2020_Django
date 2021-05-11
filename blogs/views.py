@@ -3,6 +3,7 @@ from django.core.paginator import Paginator, EmptyPage
 ##from django.http import HttpResponse
 from .models import Blog, Category, Quote, Quotefield, Comment, Photographer
 from .forms import CommentForm
+from django.core.mail import send_mail
 
 def index(request):
     return render(request, 'homepage.html')
@@ -68,10 +69,35 @@ def CategoryView(request, slug):
     return render(request, 'category.html',context)
 
 def ContactView (request):
-    return render(request, 'contact-me.html')
+    if request.method == "POST":
+        name = request.POST['name']
+        email = request.POST['email']
+        message = request.POST['message']
+
+        # send an email
+        send_mail (
+            'Message from your website from ' + name , # subject
+            'The Message is' + message, # message
+            'from' + email, # from email
+            ['yusufrefay101@gmail.com'], # to email
+            fail_silently=False)
+        
+
+        context = {
+            'name': name,
+            'email': email,
+            'message': message
+        }
+        return render(request, 'contact-me.html', context)
+
+    else:
+        return render(request, 'contact-me.html')
+
 def AboutView (request):
     return render(request, 'about-me.html')
+
 def PortfolioView (request):
     return render(request, 'portfolio.html')
+
 def ResumeView (request):
     return render(request, 'resume.html')
