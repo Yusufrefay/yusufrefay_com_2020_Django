@@ -1,104 +1,132 @@
-{% extends "base.html" %}
-{% load static %}
-{% block content %}
+    {% extends "base.html" %}
+    {% load static %}
+    {% block content %}
 
-<!-- Pre Loader -->
-<div id="preloader">
-    <div class="loading">
-        <div class="circle"></div>
-        <div class="text-loading">
-            <span data-text-preloader="B" class="letters">R</span>
-            <span data-text-preloader="L" class="letters">E</span>
-            <span data-text-preloader="O" class="letters">F</span>
-            <span data-text-preloader="G" class="letters">A</span>
-            <span data-text-preloader="S" class="letters">Y</span>
+    <!-- Pre Loader -->
+    <div id="preloader">
+        <div class="loading">
+            <div class="circle"></div>
+            <div class="text-loading">
+                <span data-text-preloader="B" class="letters">R</span>
+                <span data-text-preloader="L" class="letters">E</span>
+                <span data-text-preloader="O" class="letters">F</span>
+                <span data-text-preloader="G" class="letters">A</span>
+                <span data-text-preloader="S" class="letters">Y</span>
+            </div>
         </div>
     </div>
-</div>
 
 
-<!--Blog Page-->
-<div class="blog-page" data-simplebar>
-    <a href="{% url 'blogs' %}" class="close-blog" data-tooltip="close blog" data-position="bottom">
-        <i class="far fa-times-circle"></i>
-    </a>
-    <div class="blog-image">
-        <a href="{{ blog.photographer.portfolio_url }}" title="the Image is taken by {{ blog.photographer.photographer_name }}" target="_blank"><img src="{{blog.Blog_Background.url}}" alt=""></a>
-    </div>
-    <div class="row blog-container">
-        <div class="col-md-10 offset-md-1">
+    <!--Blog Page-->
+    <div class="blog-page" data-simplebar>
+        <a href="{% url 'blogs' %}" class="close-blog" data-tooltip="close blog" data-position="bottom">
+            <i class="far fa-times-circle"></i>
+        </a>
+        <div class="blog-image">
+            <img src="{{blog.Blog_Background.url}}" alt=""></a>
+        </div>
+        <div class="row blog-container">
+            <div class="col-md-10 offset-md-1">
 
-            <!-- Heading -->
-            <div class="blog-heading pt-70 pb-100">
-                <h2>{{blog.title}}</h2>
-                <span><i class="fas fa-hashtag"></i><a href="{% url 'category' blog.Category.slug %}">{{blog.Category}}</a></span>
-                <span><i class="fas fa-comment"></i> {{ comments.count }} comments</span>
-                <span><i class="fas fa-calendar-alt"></i>{{blog.created_on}}</span>
-            </div>
+                <!-- Heading -->
+                <div class="blog-heading pt-70 pb-100">
+                    <h2>{{blog.title}}</h2>
+                    <span><i class="fas fa-hashtag"></i><a href="{% url 'category' blog.Category.slug %}">{{blog.Category}}</a></span>
+                    <span><i class="fas fa-comment"></i> {{ comments.count }} comments</span>
+                    <span><i class="fas fa-calendar-alt"></i>{{blog.created_on}}</span>
+                    <span><i class="fas fa-camera-retro"></i>This image is taken by: <a href="{{ blog.photographer.portfolio_url }}" target="_blank">{{ blog.photographer.photographer_name }}
+                    </a></span>
 
-            <!-- Content -->
-            <div class="blog-content">
-               <p> {{blog.content|safe}} </p>
-            </div>
-            <!-- Comments -->
-
-            <div class="blog-comments mt-100">
-                <h3 class="mb-50">Comments</h3>              
-                <ul>
-                    {% for Comment in comments %}
-                    <li>
-                        <div class="author-img">
-                            <img src="{% static 'img/user-photo.jpg' %}" alt="">
-                        </div>
-                        <div class="comment-text">
-                            <h4>{{ Comment.name }}</h4>
-                            <span>{{ Comment.created_on }}</span>
-                            <p>{{ Comment.body | linebreaks }}</p>
-                        </div>
-                    </li>
-                    {% endfor %}
-                </ul>
-                </ul>
-            </div>
-
-            <!--Blog Form-->
-            <h3 class="mt-100 mb-50">Leave a comment</h3>
-            <form class="form-wrap validate-form mb-100" method="post">
-                <div class="card-body">
-                    {% if new_comment %}
-                    <div class="alert alert-success" role="alert">
-                        Your comment is awaiting moderation
-                    </div>
-                    {% else %}
                 </div>
+
+                <!-- Content -->
+                <div class="blog-content">
+                    <p> {{blog.content|safe}} </p>
+                </div>
+
+                <!-- Social media links to Share -->
+                <div class="blog-heading mt-1 pt-85 pb-60">
+                    <h4>Share with your friends</h4>
+                    {% load social_share %}
+                    <div class="btn-toolbar justify-content-center pt-20" role="toolbar"
+                        aria-label="Toolbar with button groups">
+                        <div class="btn-group mr-2" role="group" aria-label="First group">
+                            <button type="button"
+                                class="btn btn-light">{% post_to_facebook object_or_url "<i class='fab fa-facebook-f' style='font-size: 3em;'></i>" %}
+                                <button type="button"
+                                    class="btn btn-light">{% post_to_whatsapp object_or_url "<i class='fab fa-lg fa-whatsapp ' style='font-size: 3em;'></i>" %}
+                                </button>
+                                <button type="button"
+                                    class="btn btn-light">{% post_to_telegram "Yusuf Refay has posted a new Blog:{{blog.title}}" object_or_url "<i class='fab fa-telegram' style='font-size: 3em;'></i>"%}
+                                </button>
+                                <button type="button"
+                                    class="btn btn-light">{% send_email blog.title "Yusuf Refay has posted a new Blog: {{blog.title}}. Check it out!" object_or_url "<i class='fas fa-envelope' style='font-size: 3em;'></i>" %}</button>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Comments -->
+
+                <div class="blog-comments mt-40">
+                    <h3 class="mb-50">Comments</h3>
+                    {% if not comments %}
+                    <div class="alert alert-dark" role="alert">
+                        <h4> Be the first commentor!</h4>
+                    </div>
+                    {% endif %}
+                    <ul>
+                        {% for Comment in comments %}
+                        <li>
+                            <div class="author-img">
+                                <img src="{% static 'img/blog/user.png' %}" alt="">
+                            </div>
+                            <div class="comment-text">
+                                <h4>{{ Comment.name }}</h4>
+                                <span>{{ Comment.created_on }}</span>
+                                <p>{{ Comment.body | linebreaks }}</p>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!--Blog Form-->
+                <h3 class="mt-100 mb-50">Leave a comment</h3>
+                <form class="form-wrap validate-form mb-100" method="post">
+                    <div class="card-body">
+                        {% if new_comment %}
+                        <div class="alert alert-success" role="alert">
+                            Your comment is awaiting moderation
+                        </div>
+                        {% else %}
+                    </div>
                     {% for field in comment_form %}
                     <div class="validate-input">
                         {{field}}
                         <span class="focus-input"></span>
                         {% if field.name == 'body' %}
-                            <label class="label-input comment" for="comment">
-                        {% else %}
+                        <label class="label-input comment" for="comment">
+                            {% else %}
                             <label class="label-input" for="{{field.name}}">
-                        {% endif %}
+                                {% endif %}
 
-                        {% if field.name == 'name' %}
-                            <i class="fas fa-user"></i>
-                        {% elif field.name == 'email' %}
-                            <i class="fas fa-envelope"></i>
-                        {% else %}
-                            <i class="fas fa-comment"></i>
-                        {% endif %}
-                        </label>
+                                {% if field.name == 'name' %}
+                                <i class="fas fa-user"></i>
+                                {% elif field.name == 'email' %}
+                                <i class="fas fa-envelope"></i>
+                                {% else %}
+                                <i class="fas fa-comment"></i>
+                                {% endif %}
+                            </label>
                     </div>
                     {% endfor %}
-                        {% csrf_token %}
-                        <div class="form-btn">
-                            <button type="submit" class="btn-st">Send a comment</button>
-                        </div>
-                    
+                    {% csrf_token %}
+                    <div class="form-btn">
+                        <button type="submit" class="btn-st">Send a comment</button>
+                    </div>
+
                     {% endif %}
                 </form>
+            </div>
         </div>
-    </div>
 
-    {% endblock content %}
+        {% endblock content %}

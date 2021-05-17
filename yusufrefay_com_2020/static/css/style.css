@@ -1905,12 +1905,6 @@ blockquote span img {
     background-position: center;
 }
 
-.blog-image img {
-	object-fit:cover;
-	object-position: 50% 50%;
-	width: 1920px;
-	height: 700px;
-}
 .blog-page h3 {
 	position: relative;
 	text-align: center;
