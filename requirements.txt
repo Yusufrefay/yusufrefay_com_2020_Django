@@ -4,3 +4,4 @@ psycopg2-binary==2.8.6
 pillow==8.0.1
 django-environ
 django-ckeditor
+django-social-share
